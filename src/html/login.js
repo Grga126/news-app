@@ -3,7 +3,7 @@ export default function Login(){
         <div>
         <h1 class="header">DOBRODOSLI NA VECERNJE VESTI</h1>
         <form>
-            <p class="paragraph" >Unesite e-mail:</p>
+            <p class="paragraph" >Unesite sdsd e-mail:</p>
             <input class="input" type="text" id="email" name="email"/><br/>
             <p class="paragraph">Unesite sifru:</p>
             <input class="input" type="password" id="password" name="password"/><br/>
