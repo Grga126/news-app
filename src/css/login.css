@@ -1,44 +1,25 @@
 *{
     padding: 0px;
     margin: 0px;
-  }
-  
-  
-  
-  .header{
+}
+
+body{
+    background-image: url(/pozadina.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header{
+    text-align: center;
     font-style: italic;
+    margin-top: 5%;
+}
+
+.paragraph{
     text-align: center;
-    color: yellow;
-  }
-  
-  .div1{
-    display : flex;
-    flex-direction: column ;
-    justify-content: center;
-    align-items: center;
-    gap : 20px;
-    margin-top: 30vh;
-  }
-  
-  button{
-    padding : 2rem 0;
-    outline : none;
-    border : 0 ;
-    text-align: center;
-    width: 200px;
-  }
-  
-  .paragraph{
-    text-align: center;
-    font-style: bold;
-    font-size: large;
-    background-color: aquamarine;
-    
-  }
-  
-  .input{
-    display:block;
-    margin:0 auto;
-    width:35%;
-    height:35%;
-  }
+    background-color: lightyellow;
+    width: 10%;
+    margin-left: 45%;
+
+}
+
