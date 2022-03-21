@@ -1,0 +1,29 @@
+.paragraph{
+    text-align: center;
+}
+
+.input2{
+    margin-left: 44%;
+}
+
+.articlesign{
+    padding-top: 50px;
+}
+
+.link2{
+    margin-top: 10px;
+    margin-left: 40%;
+}
+
+.button2{
+    margin-top: 15px;
+    margin-left: 15px;
+    background: none repeat scroll 0 0 #66A3D2;
+    border-radius: 10px 10px 10px 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000000;
+}
