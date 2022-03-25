@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "description": "news-app-application",
   "main": "server.js",
-  "type" : "module",
+  "type": "module",
   "scripts": {
-    "start" : "nodemon server"
+    "start": "nodemon server"
   },
   "author": "Marjanov Milan",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3"
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.8"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
