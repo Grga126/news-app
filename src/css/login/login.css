@@ -1,12 +1,8 @@
-*{
-    padding: 0px;
-    margin: 0px;
-}
 
-body{
-    background-image: url("/public/assets/pozadina.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+@media only screen and (max-width:768px){
+    .articlesign{
+        margin-left: 20%;
+    }
 }
 
 .header{

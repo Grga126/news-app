@@ -1,19 +1,22 @@
+
 export default function Signin(){
     return (
-        <div className="div">
-            <h1 className="header">Napravite nalog!</h1>
-                <article className="articlesign">
-                <p className="paragraph">Unesite ime:</p>
-                <input className="input2" type="text" id="ime" name="ime"/><br/>
-                <p className="paragraph">Unesite E-mail:</p>
-                <input className="input2" type="email" id="email" name="email"/><br/>
-                <p className="paragraph">Unesite broj godina:</p>
-                <input className="input2" type="number" id="number" name="number"/><br/>
-                <p className="paragraph">Unesite sifru</p>
-                <input className="input2" type="password" id="password" name="password"/><br/>
+        <div className="sign-page background">
+            <h1 className="sign-page-header">Napravite nalog!</h1>
+                <article className="sign-page-article">
+                <p className="sign-page-header">Unesite ime:</p>
+                <input className="sign-page-input" type="text" id="ime" name="ime"/><br/>
+                <p className="sign-page-header">Unesite E-mail:</p>
+                <input className="sign-page-input" type="email" id="email" name="email"/><br/>
+                <p className="sign-page-header">Unesite broj godina:</p>
+                <input className="sign-page-input" type="number" id="number" name="number"/><br/>
+                <p className="sign-page-header">Unesite sifru</p>
+                <input className="sign-page-input" type="password" id="password" name="password"/><br/>
+                <div className="sign-page-redirection">
+                    <a className="sign-page-link" href="login"> Imate vec postojeci nalog?</a>
+                </div>
+            <button className="sign-page-button">Kreiraj nalog!</button>
             </article>
-            <a className="link2" href="login"> Imate vec postojeci nalog?</a>
-            <button className="button2">Kreiraj nalog!</button>
         </div>
     )
 }

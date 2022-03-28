@@ -1,21 +1,19 @@
-.paragraph{
+@media only screen and (max-width:768px){
+.sign-page-button{
+        margin-left: 20%;
+    }
+}
+
+.sign-page{
+    margin: 0 auto;
     text-align: center;
 }
 
-.input2{
-    margin-left: 44%;
+.sign-page-redirection{
+    margin-top: 16px;
 }
 
-.articlesign{
-    padding-top: 50px;
-}
-
-.link2{
-    margin-top: 10px;
-    margin-left: 40%;
-}
-
-.button2{
+.sign-page-button{
     margin-top: 15px;
     margin-left: 15px;
     background: none repeat scroll 0 0 #66A3D2;
@@ -27,3 +25,5 @@
     text-align: center;
     text-shadow: 1px 1px 1px #000000;
 }
+
+

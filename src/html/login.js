@@ -1,6 +1,6 @@
 export default function Login(){
     return (
-        <div>
+        <div className="login-page background">
         <h1 className="header">DOBRODOSLI NA VECERNJE VESTI</h1>
         <form className="form">
             <article className="articleinput">
