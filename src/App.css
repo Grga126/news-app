@@ -1,3 +1,9 @@
+* {
+    padding : 0;
+    margin : 0;
+}
+
+
 @import "./css/login/login.css";
 @import "./css/signin/signin.css";
 @import "./css/background.css"

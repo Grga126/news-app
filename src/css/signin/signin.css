@@ -1,3 +1,12 @@
+.sign-page-header  {
+    margin-top: 20px;
+}
+
+.sign-page-input {
+    margin-top: 20px;
+}
+
+
 @media only screen and (max-width:768px){
 .sign-page-button{
         margin-left: 20%;
