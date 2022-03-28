@@ -6,7 +6,13 @@ var app = express();
 import dotenv from "dotenv";
 import connectDB from "./db/connect.js";
 dotenv.config();
+import 'express-async-errors';
 
+import authRouter from "./routes/auth-routes.js";
+
+app.use(express.json())
+
+app.use("api/auth", authRouter);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
