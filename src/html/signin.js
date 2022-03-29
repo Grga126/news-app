@@ -1,7 +1,12 @@
 import axios from "axios";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Signin() {
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const [showError, setShowError] = useState(false);
+
   const handleRegister = (e) => {
     e.preventDefault();
 
@@ -12,10 +17,13 @@ export default function Signin() {
         password: passwordInput.current.value,
       })
       .then(() => {
-        alert("sve je proslo dobro");
+        setTimeout(() => {
+          navigate("/login", { replace: true });
+        }, 1000);
       })
       .catch((error) => {
-       // error.msg ce lepo vratiti sa backa sta je tacno problem
+        setError(error.response.data.msg);
+        setShowError(true);
       });
   };
 
@@ -27,6 +35,13 @@ export default function Signin() {
     <div className="sign-page background">
       <h1>Napravite nalog!</h1>
       <article className="sign-page-article">
+        {showError && (
+          <p className="error-message"
+            style={{ backgroundColor: "red", width: "250px", margin: "0 auto", padding : "15px", color : "white" }}
+          >
+            {error}
+          </p>
+        )}
         <p className="sign-page-header">Unesite korisnicko ime:</p>
         <input
           className="sign-page-input"
