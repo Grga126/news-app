@@ -1,18 +1,18 @@
 
 @media only screen and (max-width:768px){
-    .articlesign{
+    .login-page-articlelogin{
         margin-left: 20%;
     }
 }
 
-.header{
+.login-page-header{
     text-align: center;
     font-style: italic;
     margin-top: 5%;
 }
 
 
-.button{
+.login-page-button{
     margin-top: 15px;
     margin-left: 45%;
     background: none repeat scroll 0 0 #66A3D2;
@@ -25,20 +25,20 @@
     text-shadow: 1px 1px 1px #000000;
 }
 
-.articlebutton{
+.login-page-button{
     margin-left: 50%;
 }
 
-.articleinput{
+.login-page-articleinput{
     margin-left: 45%;
     padding-top: 20px;
 }
 
-.link{
+.login-page-link{
     margin-left: 25px;
 }
 
-.form{
+.login-page-form{
     padding-bottom: 15px;
 }
 
