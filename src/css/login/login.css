@@ -1,16 +1,15 @@
 
 @media only screen and (max-width:768px){
     .login-page-articlelogin{
-        margin-left: 20%;
+        margin-left: 20px;
     }
 }
 
-.login-page-header{
+.login-page-form{
     text-align: center;
-    font-style: italic;
-    margin-top: 5%;
+    padding: 0 auto;
+    margin: 0 auto;
 }
-
 
 .login-page-button{
     margin-top: 15px;
@@ -25,20 +24,12 @@
     text-shadow: 1px 1px 1px #000000;
 }
 
-.login-page-button{
-    margin-left: 50%;
-}
-
-.login-page-articleinput{
-    margin-left: 45%;
-    padding-top: 20px;
+.login-page-redirection{
+    margin-top: 16px;
+    text-align: center;
 }
 
 .login-page-link{
-    margin-left: 25px;
-}
-
-.login-page-form{
-    padding-bottom: 15px;
+    margin: 0 auto;
 }
 
