@@ -7,8 +7,12 @@ import dotenv from "dotenv";
 import connectDB from "./db/connect.js";
 dotenv.config();
 import "express-async-errors";
-
+import morgan from "morgan";
 import authRouter from "./routes/auth-routes.js";
+
+if (process.env.NODE_ENV !== "production") {
+  app.use(morgan("dev"));
+}
 
 app.use(express.json());
 
