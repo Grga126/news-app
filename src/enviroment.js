@@ -1,0 +1,1 @@
+export const loginWithGoogle = "http://localhost:5000/auth/google"

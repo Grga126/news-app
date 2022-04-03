@@ -7,22 +7,25 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, "Unesite korisnicko ime"],
     minlength: 3,
-    maxlength: 20,
+    maxlength: 30,
     trim: true,
     unique : true
   },
+  googleID : {
+    type : String,
+    unique : true
+  },
+
   email: {
     type: String,
-    required: [true, "Unesite email"],
+    default : "noemail@noemail.com",
     validate: {
       validator: validator.isEmail,
       message: "Unesite validan email",
     },
-    unique: true,
   },
   encryptedPassword: {
     type: String,
-    required: true,
     minlength: 5,
     select: false,
   },

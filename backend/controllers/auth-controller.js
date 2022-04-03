@@ -30,7 +30,6 @@ const login = async (req, res) => {
     throw new BadRequestError("Popunite sva polja");
   }
 
-
   const user = await User.findOne({
     username: username,
   }).select("+encryptedPassword");
@@ -39,9 +38,9 @@ const login = async (req, res) => {
     throw new UnauthenticatedError("Pogresni kredencijali");
   }
 
-  if(password !== decryptPassword(user.encryptedPassword)){
+  if (password !== decryptPassword(user.encryptedPassword)) {
     throw new UnauthenticatedError("Pogresni kredencijali");
-  }  
+  }
 
   const token = user.createJWT();
 
@@ -49,4 +48,8 @@ const login = async (req, res) => {
   res.status(StatusCodes.OK).json({ user, token });
 };
 
-export { register, login };
+const googleAuthRedirect = (req, res) => {
+  res.send("uspesno");
+};
+
+export { register, login, googleAuthRedirect };
