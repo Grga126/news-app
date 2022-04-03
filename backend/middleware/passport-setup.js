@@ -22,11 +22,11 @@ export default passport.use(
       clientSecret: process.env.clientSecret,
     },
     async (accessToken, refreshToken, profile, done) => {
-      const userAlreadyExists = await User.findOne({
+      const alreadyUser = await User.findOne({
         googleID: profile.id,
       });
-      if (userAlreadyExists) {
-        done(null, currentUser);
+      if (alreadyUser) {
+        done(null, alreadyUser);
       } else {
         const newUser = await User.create({
           googleID: profile.id,

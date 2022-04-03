@@ -49,7 +49,7 @@ const login = async (req, res) => {
 };
 
 const googleAuthRedirect = (req, res) => {
-  res.send("uspesno");
+  res.send(`Dobrodosli, ${req.user.username}`);
 };
 
 export { register, login, googleAuthRedirect };
