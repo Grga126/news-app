@@ -3,6 +3,7 @@ import { StatusCodes } from "http-status-codes";
 import { BadRequestError, UnauthenticatedError } from "../errors/index.js";
 import encryptPassword from "../utilty/encrypt-password.js";
 import decryptPassword from "../utilty/decrypt-password.js";
+import { authCheck } from "../utilty/auth-check.js";
 
 const register = async (req, res) => {
   const { username, email, password } = req.body;
@@ -49,7 +50,12 @@ const login = async (req, res) => {
 };
 
 const googleAuthRedirect = (req, res) => {
-  res.send(`Dobrodosli, ${req.user.username}`);
+  if (authCheck(req, res)) {
+    res.cookie("user", req.user);
+    res.redirect("http://localhost:3000/dashboard");
+  } else {
+    res.redirect("http://localhost:3000/login");
+  }
 };
 
 export { register, login, googleAuthRedirect };
