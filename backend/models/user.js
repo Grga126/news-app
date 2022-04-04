@@ -8,17 +8,16 @@ const UserSchema = new mongoose.Schema({
     unique: true,
     required: [true, "Unesite korisnicko ime"],
     minlength: 3,
-    maxlength: 30,
+    maxlength: 50,
     trim: true,
   },
-  googleID : {
-    type : String,
-    unique : true
+  googleID: {
+    type: String,
   },
 
   email: {
     type: String,
-    required : true,
+    required: true,
     validate: {
       validator: validator.isEmail,
       message: "Unesite validan email",
@@ -28,6 +27,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     minlength: 5,
     select: false,
+  },
+
+  accessToken: {
+    type: String,
   },
 });
 

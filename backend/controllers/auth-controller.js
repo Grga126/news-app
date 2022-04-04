@@ -12,27 +12,48 @@ const register = async (req, res) => {
     throw new BadRequestError("Popunite sva polja");
   }
 
+  const userAlreadyExists = await User.findOne({ email });
+  if (userAlreadyExists) {
+    throw new BadRequestError("Korisnik vec postoji");
+  }
+
   const encryptedPassword = encryptPassword(password);
 
   const user = await User.create({ username, encryptedPassword, email });
 
-  res.status(StatusCodes.CREATED).json({
-    user: {
-      email: user.email,
-      username: user.username,
-    },
-  });
+  const token = user.createJWT();
+  user.accessToken = token;
+
+  const updatedUser = await User.findByIdAndUpdate(
+    { _id: user._id },
+    {
+      $set: {
+        accessToken: user.accessToken,
+      },
+    }
+  )
+    .then(() => {
+      res.status(StatusCodes.CREATED).json({
+        user: {
+          email: user.email,
+          username: user.username,
+        },
+      });
+    })
+    .catch((error) => {
+      throw new BadRequestError(error);
+    });
 };
 
 const login = async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
-  if (!username || !password) {
+  if (!email || !password) {
     throw new BadRequestError("Popunite sva polja");
   }
 
   const user = await User.findOne({
-    username: username,
+    email: email,
   }).select("+encryptedPassword");
 
   if (!user) {
@@ -51,7 +72,7 @@ const login = async (req, res) => {
 
 const googleAuthRedirect = (req, res) => {
   if (authCheck(req, res)) {
-    res.cookie("user", req.user);
+    res.cookie("token", req.user.accessToken)
     res.redirect("http://localhost:3000/dashboard");
   } else {
     res.redirect("http://localhost:3000/login");

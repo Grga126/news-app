@@ -1,8 +1,9 @@
 import express from "express";
 import errorHandlerMiddleware from "./middleware/error-handler.js";
 import notFoundMiddleware from "./middleware/not-found.js";
+import cors from 'cors'
 var app = express();
-
+app.use(cors())
 import cookieSession from "cookie-session";
 import passportSetup from "./middleware/passport-setup.js";
 
