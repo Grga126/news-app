@@ -12,7 +12,11 @@ router.route("/register").post(register);
 router.route("/login").post(login);
 router.route("/google").get(
   passport.authenticate("google", {
-    scope: ["profile"],
+    scope: [
+      "openid",
+      "email",
+      "profile",
+    ],
   })
 );
 router

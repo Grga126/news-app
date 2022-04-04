@@ -9,7 +9,6 @@ const UserSchema = new mongoose.Schema({
     minlength: 3,
     maxlength: 30,
     trim: true,
-    unique : true
   },
   googleID : {
     type : String,
@@ -18,7 +17,7 @@ const UserSchema = new mongoose.Schema({
 
   email: {
     type: String,
-    default : "noemail@noemail.com",
+    required : true,
     validate: {
       validator: validator.isEmail,
       message: "Unesite validan email",

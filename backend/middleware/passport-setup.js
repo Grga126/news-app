@@ -23,7 +23,7 @@ export default passport.use(
     },
     async (accessToken, refreshToken, profile, done) => {
       const alreadyUser = await User.findOne({
-        googleID: profile.id,
+        email: profile.emails[0].value,
       });
       if (alreadyUser) {
         done(null, alreadyUser);
@@ -31,6 +31,7 @@ export default passport.use(
         const newUser = await User.create({
           googleID: profile.id,
           username: profile.displayName,
+          email: profile.emails[0].value,
         });
 
         done(null, newUser);
