@@ -30,7 +30,7 @@ export default passport.use(
       } else {
         const newUser = await User.create({
           googleID: profile.id,
-          username: profile.displayName,
+          username: profile.emails[0].value,
           email: profile.emails[0].value,
         });
 
