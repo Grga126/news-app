@@ -13,7 +13,7 @@
     padding:200px;
 }
 
-a:link, a:visited {
+a:dashboard-page-link, a:visited {
     background-color: lightgreen;
     color: black;
     padding: 14px 25px;

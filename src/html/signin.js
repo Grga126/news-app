@@ -73,7 +73,7 @@ export default function Signin() {
         />
         <br />
         <div className="sign-page-redirection">
-          <a className="sign-page-link" href="login">
+          <a className="sign-page-link" href="/">
             {" "}
             Imate vec postojeci nalog?
           </a>
