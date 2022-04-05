@@ -1,35 +1,82 @@
-
-@media only screen and (max-width:768px){
-    .login-page-articlelogin{
-        margin-left: 20px;
-    }
+*{
+    font-family: 'Montserrat' , sans-serif;
+}
+body{
+    background:#141414;
+    margin: 0;
+    padding: 0;
+    font-family:'Montserrat', sans-serif;
 }
 
-.login-page-form{
+.login-page-container{
+    width:360px;
+    height:500px;
+    background:#545454;
+    position: absolute;
+    border-radius:10px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    color:white;
     text-align: center;
-    padding: 0 auto;
-    margin: 0 auto;
+}
+
+.login-page-container h1{
+    font-size:35px;
+    margin-top:40px;
+    margin-bottom:30px;
+}
+
+.login-page-box{
+    width:260px;
+    height:40px;
+    background:#f1f1f1b3;
+    border-radius:10px;
+    margin:10px auto;
 }
 
 .login-page-button{
-    margin-top: 15px;
-    margin-left: 45%;
-    background: none repeat scroll 0 0 #66A3D2;
-    border-radius: 10px 10px 10px 10px;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-weight: bold;
-    padding: 10px;
-    text-align: center;
-    text-shadow: 1px 1px 1px #000000;
+    font-family:'Montserrat', sans-serif;
+    width:260px;
+    height:40px;
+    background:#9254C8;
+    border-radius:10px;
+    margin:14px auto;
+    display:block;
+    font-size:16px;
+    border:none;
+    color:white;
+    cursor:pointer;
+    transition:0.4s all;
 }
 
-.login-page-redirection{
-    margin-top: 16px;
-    text-align: center;
+.login-page-button:hover {
+    background:#3498db;
+}
+
+.login-page-box input{
+    font-family:'Montserrat', sans-serif;
+    background:none;
+    border:none;
+    outline:none;
+    text-align:center;
+    width:90%;
+    line-height:37px;
+    font-size:16px;
+    color:#333;
 }
 
 .login-page-link{
-    margin: 0 auto;
+    color: black;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
 
+.login-page-login-with-google{
+    background-image: url("/public/assets/google.jpg");
+    background-size: cover;
+    width: 45px;
+    height: 45px;
+}

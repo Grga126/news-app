@@ -38,39 +38,42 @@ export default function Login() {
   return (
     <div className="login-page background">
       <h1 style={{ margin: "0 auto", textAlign: "center" }}>
-        DOBRODOSLI NA VECERNJE VESTI
+        WELCOME TO NEWS-APP
       </h1>
-      <form className="login-page-form">
-        <article className="login-page-articleinput">
-          <p className="sign-page-header">Unesite e-mail:</p>
+      <div className="login-page-container">
+      <h1>Login</h1>
+      <form action="">
+      <div className="login-page-box">
           <input
             className="login-page-input"
             type="text"
+            placeholder="Username/email"
             id="email"
             name="email"
             ref={emailinput}
           />
-          <br />
-          <p className="sign-page-header">Unesite sifru:</p>
+          </div>
+          <div className="login-page-box">
           <input
             className="login-page-input"
             type="password"
+            placeholder="Password"
             id="password"
             name="password"
             ref={passwordinput}
           />
-          <br />
-        </article>
+          </div>
       </form>
       <button onClick={handleLogin} className="login-page-button">
         Login
       </button>
-      <button onClick={handleGoogleLogin}>Log in in with google</button>
-      <br />
-      <div className="login-page-redirection">
+      <p>Or Login With</p>
+      <button onClick={handleGoogleLogin} className="login-page-login-with-google" ></button>
+      <div className="login-page-box">
         <a className="login-page-link" href="signin">
-          Nemate nalog?
+          Create Account
         </a>
+        </div>
       </div>
     </div>
   );
