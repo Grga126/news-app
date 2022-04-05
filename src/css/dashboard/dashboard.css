@@ -1,0 +1,23 @@
+@media only screen and (max-width:768px){
+    .background{
+        position: absolute;
+    }
+}
+
+.dashboard-page {
+    text-align: center;
+    padding-top:200px;
+}
+
+.dashboard-page-article{
+    padding:200px;
+}
+
+a:link, a:visited {
+    background-color: lightgreen;
+    color: black;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
