@@ -15,7 +15,7 @@ export default function Login() {
     e.preventDefault();
 
     axios
-      .post("api/auth/login", {
+      .post("/auth/login", {
         email: emailinput.current.value,
         password: passwordinput.current.value,
       })

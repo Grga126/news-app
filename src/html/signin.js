@@ -15,7 +15,7 @@ export default function Signin() {
     e.preventDefault();
 
     axios
-      .post("/api/auth/register", {
+      .post("http://localhost:5000/auth/register", {
         email: emailInput.current.value,
         username: usernameInput.current.value,
         password: passwordInput.current.value,

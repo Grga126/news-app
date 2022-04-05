@@ -5,12 +5,12 @@ import dotenv from "dotenv";
 dotenv.config();
 
 passport.serializeUser((user, done) => {
-  done(null, user._id);
+  done(null, JSON.stringify(user.accessToken));
 });
 
-passport.deserializeUser((_id, done) => {
-  User.findById({ _id }).then((user) => {
-    done(null, user);
+passport.deserializeUser((accessToken, done) => {
+  User.findOne({ accessToken }).then((user) => {
+    done(null, JSON.parse(user));
   });
 });
 
@@ -32,6 +32,7 @@ export default passport.use(
           googleID: profile.id,
           username: profile.emails[0].value,
           email: profile.emails[0].value,
+          accessToken: accessToken,
         });
 
         done(null, newUser);
