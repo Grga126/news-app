@@ -70,7 +70,7 @@ export default function Login() {
       <p>Or Login With</p>
       <button onClick={handleGoogleLogin} className="login-page-login-with-google" ></button>
       <div className="login-page-box">
-        <a className="login-page-link" href="signin">
+        <a className="login-page-link" href="register">
           Create Account
         </a>
         </div>
