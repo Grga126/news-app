@@ -32,6 +32,10 @@ const UserSchema = new mongoose.Schema({
   accessToken: {
     type: String,
   },
+
+  loginType : {
+    type : String,
+  }
 });
 
 UserSchema.methods.createJWT = function () {

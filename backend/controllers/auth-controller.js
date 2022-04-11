@@ -4,6 +4,8 @@ import { BadRequestError, UnauthenticatedError } from "../errors/index.js";
 import encryptPassword from "../utilty/encrypt-password.js";
 import decryptPassword from "../utilty/decrypt-password.js";
 import { authCheck } from "../utilty/auth-check.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 const register = async (req, res) => {
   const { username, email, password } = req.body;
@@ -18,8 +20,14 @@ const register = async (req, res) => {
   }
 
   const encryptedPassword = encryptPassword(password);
+  const loginType = process.env.LOCAL_ACCOUNT;
 
-  const user = await User.create({ username, encryptedPassword, email });
+  const user = await User.create({
+    username,
+    encryptedPassword,
+    email,
+    loginType,
+  });
 
   const token = user.createJWT();
   user.accessToken = token;
@@ -72,10 +80,9 @@ const login = async (req, res) => {
 
 const googleAuthRedirect = (req, res) => {
   if (authCheck(req, res)) {
-    res.cookie("token", req.user.accessToken)
-    res.redirect("http://localhost:3000/dashboard");
+    res.send(200).json(req.user.accessToken);
   } else {
-    res.redirect("http://localhost:3000/login");
+    throw new UnauthenticatedError("Authorization failed");
   }
 };
 

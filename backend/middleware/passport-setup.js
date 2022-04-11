@@ -4,22 +4,27 @@ import User from "../models/user.js";
 import dotenv from "dotenv";
 dotenv.config();
 
-passport.serializeUser((user, done) => {
+const serialize = passport.serializeUser((user, done) => {
+  if (!user) return done(err, null);
   done(null, JSON.stringify(user.accessToken));
 });
 
-passport.deserializeUser((accessToken, done) => {
-  User.findOne({ accessToken }).then((user) => {
-    done(null, JSON.parse(user));
-  });
+const deserialize = passport.deserializeUser((accessToken, done) => {
+  User.findOne({ accessToken })
+    .then((user) => {
+      done(null, JSON.parse(user));
+    })
+    .catch((err) => {
+      done(err, null);
+    });
 });
 
-export default passport.use(
+const googleStrategy = passport.use(
   new GoogleStrategy(
     {
-      callbackURL: "/auth/google/redirect",
-      clientID: process.env.clientID,
-      clientSecret: process.env.clientSecret,
+      callbackURL: process.env.GOOGLE_CALLBACK_URL,
+      clientID: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
     },
     async (accessToken, refreshToken, profile, done) => {
       const alreadyUser = await User.findOne({
@@ -33,6 +38,7 @@ export default passport.use(
           username: profile.emails[0].value,
           email: profile.emails[0].value,
           accessToken: accessToken,
+          loginType: process.env.GOOGLE_ACCOUNT,
         });
 
         done(null, newUser);
@@ -40,3 +46,5 @@ export default passport.use(
     }
   )
 );
+
+export { serialize, deserialize, googleStrategy };
