@@ -80,7 +80,7 @@ const login = async (req, res) => {
 
 const googleAuthRedirect = (req, res) => {
   if (authCheck(req, res)) {
-    res.send(200).json(req.user.accessToken);
+    res.status(StatusCodes.OK).json(req.user.accessToken);
   } else {
     throw new UnauthenticatedError("Authorization failed");
   }

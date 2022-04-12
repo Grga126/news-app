@@ -3,7 +3,11 @@ import errorHandlerMiddleware from "./middleware/error-handler.js";
 import notFoundMiddleware from "./middleware/not-found.js";
 import cors from "cors";
 import cookieSession from "cookie-session";
-import { serialize, deserialize, googleStrategy } from "./middleware/passport-setup.js";
+import {
+  serialize,
+  deserialize,
+  googleStrategy,
+} from "./middleware/passport-setup.js";
 import dotenv from "dotenv";
 import connectDB from "./db/connect.js";
 import "express-async-errors";
@@ -50,7 +54,7 @@ const start = async () => {
     await connectDB(process.env.MONGO_URL);
     app.listen(port);
   } catch (error) {
-    res.send(error);
+    console.log(error);
   }
 };
 
